@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddie Dee Integrated Services - Excellence in Manufacturing, Quality in Every Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0c1014;
+            --color-accent: #f6411d;
+            --color-bg: #F2EDE6;
+            --color-text: #0D1117;
+            --color-surface: #141a24;
+            --color-secondary-accent: #87a8b0;
+            --font-display: 'Exo 2', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --border-radius: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(12, 16, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 4px 4px 0 rgba(246, 65, 29, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-surface);
+            box-shadow: -4px 4px 0 rgba(246, 65, 29, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 4px 4px 0 rgba(246, 65, 29, 0.3);
+            max-width: 900px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-secondary-accent);
+            font-weight: 300;
+            max-width: 700px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            border-radius: var(--border-radius);
+        }
+
+        .cta-button:hover {
+            background: #d93816;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--color-accent);
+        }
+
+        /* About Section */
+        #about {
+            background: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 rgba(246, 65, 29, 0.2);
+            border-radius: var(--border-radius);
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--color-surface);
+            color: #fff;
+        }
+
+        #services h2 {
+            color: #fff;
+        }
+
+        #services h2::after {
+            background: var(--color-accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-left: 4px solid var(--color-accent);
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(246, 65, 29, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 rgba(246, 65, 29, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .service-card p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #fff;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 4px 4px 0 rgba(246, 65, 29, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 rgba(246, 65, 29, 0.2);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+
+        .contact-item p {
+            color: var(--color-text);
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background: #20BA5A;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Eddie <span>Dee</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/7178310/pexels-photo-7178310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Eddie Dee Integrated Services Manufacturing Facility" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Eddie Dee Integrated Services</h1>
+            <p class="tagline">Excellence in Manufacturing, Quality in Every Product</p>
+            <p>Your Trusted Manufacturing Partner in Uyo. We deliver precision, quality, and reliability in every product we manufacture.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-grid">
+                <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Eddie Dee Manufacturing Team" class="about-image">
+                <div class="about-content">
+                    <p>Eddie Dee Integrated Services is a leading manufacturing company based in Uyo, Akwa Ibom State. We are committed to delivering high-quality manufactured products that meet international standards while serving the Nigerian market with excellence.</p>
+                    <p>Our state-of-the-art facility combines modern manufacturing technology with skilled craftsmanship to produce products that our clients can depend on. Located in the heart of Uyo's Federal Housing Estate, we pride ourselves on precision engineering, quality control, and timely delivery.</p>
+                    <p>Our integrated approach ensures that every stage of the manufacturing process maintains the highest standards, from raw material sourcing to final product delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Manufacturing Solutions</h3>
+                    <p>We provide comprehensive manufacturing services tailored to meet diverse industry needs. Our capabilities include precision manufacturing, product development, quality assurance, and custom production solutions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Control</h3>
+                    <p>Every product undergoes rigorous quality checks at multiple stages to ensure compliance with industry standards and client specifications.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Manufacturing</h3>
+                    <p>We work closely with clients to manufacture products that meet their exact requirements, from prototypes to full-scale production runs.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Product Development</h3>
+                    <p>Our experienced team supports clients through the entire product development cycle, from concept to market-ready products.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Logistics Support</h3>
+                    <p>We offer integrated logistics solutions to ensure timely delivery of manufactured goods across Nigeria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <p>Ready to discuss your manufacturing needs? Get in touch with Eddie Dee Integrated Services today. We're here to provide solutions that meet your requirements with precision and professionalism.</p>
+                <p>Visit our facility at No 6, Road 8, Federal Housing Estate, Uyo, or reach out to us via phone or WhatsApp. Our team is ready to assist you with all your manufacturing inquiries.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <a href="tel:+2348038706571">+234 803 870 6571</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:info@eddiedeeservices.com">info@eddiedeeservices.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Address</h3>
+                        <p>No 6, Road 8, Federal Housing Estate, Uyo, Akwa Ibom State, Nigeria</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/2348038706571" class="whatsapp-btn" target="_blank">Message Us on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eddie Dee Integrated Services. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2348038706571" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
