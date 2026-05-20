@@ -1,42 +1,42 @@
 {
-  "businessName": "Eddie Dee Integrated Services",
-  "industry": "Manufacturing",
-  "tone": "professional",
-  "tagline": "Excellence in Manufacturing, Quality in Every Product",
+  "businessName": "So Juicy Cloud Kitchen Limited",
+  "industry": "FoodTech / Cloud Kitchen",
+  "tone": "warm, inviting, modern",
+  "tagline": "Fresh Meals, Delivered Fast",
   "sections": [
     {
       "id": "hero",
       "name": "Hero",
-      "copy": "Eddie Dee Integrated Services - Your Trusted Manufacturing Partner in Uyo. We deliver precision, quality, and reliability in every product we manufacture. Excellence in Manufacturing, Quality in Every Product.",
-      "imagePrompt": "Modern industrial manufacturing facility in Nigeria with clean production floor, advanced machinery, professional workers in safety gear, natural lighting through large windows, Uyo industrial landscape visible in background, professional photography, high detail, warm professional atmosphere",
+      "copy": "Welcome to So Juicy Cloud Kitchen Limited\n\nFresh Meals, Delivered Fast\n\nExperience the convenience of restaurant-quality meals delivered straight to your doorstep in Uyo. From hearty Nigerian favorites to international delights, we prepare every dish with premium ingredients and deliver it hot and fresh.\n\nOrder Now on WhatsApp",
+      "imagePrompt": "Photorealistic overhead shot of beautifully plated Nigerian jollof rice with grilled chicken, fried plantains, and fresh salad in eco-friendly takeout containers, steam rising, warm kitchen lighting, modern cloud kitchen background with stainless steel surfaces, vibrant colors, food photography style",
       "layout": "centered"
     },
     {
       "id": "about",
       "name": "About Us",
-      "copy": "Eddie Dee Integrated Services is a leading manufacturing company based in Uyo, Akwa Ibom State. We are committed to delivering high-quality manufactured products that meet international standards while serving the Nigerian market with excellence. Our state-of-the-art facility combines modern manufacturing technology with skilled craftsmanship to produce products that our clients can depend on. Located in the heart of Uyo's Federal Housing Estate, we pride ourselves on precision engineering, quality control, and timely delivery. Our integrated approach ensures that every stage of the manufacturing process maintains the highest standards, from raw material sourcing to final product delivery.",
-      "imagePrompt": "Professional Nigerian manufacturing team in modern factory setting, diverse workers collaborating around quality control station, industrial equipment in background, natural light, corporate photography style, Uyo business district visible through windows, confident and professional atmosphere",
+      "copy": "Your Trusted Cloud Kitchen in Uyo\n\nSo Juicy Cloud Kitchen Limited is revolutionizing how Uyo residents enjoy great food. As a modern cloud kitchen operator, we focus entirely on what matters most: preparing delicious, hygienic meals and getting them to you quickly.\n\nOperating from our state-of-the-art facility at No 6, Road 8, Federal Housing Estate, Uyo, we've eliminated the traditional restaurant overhead to bring you exceptional value without compromising on quality. Every meal is prepared fresh to order by our experienced culinary team, packaged with care, and delivered promptly to your location.\n\nWhether you're craving local favorites, continental dishes, or something in between, So Juicy is your reliable partner for convenient, delicious dining.",
+      "imagePrompt": "Professional photo of a clean, modern cloud kitchen interior in Nigeria, chefs in white uniforms and hairnets preparing food, stainless steel equipment, organized food prep stations, bright LED lighting, food safety standards visible, warm and professional atmosphere",
       "layout": "split"
     },
     {
       "id": "services",
       "name": "Our Services",
-      "copy": "Manufacturing Solutions: We provide comprehensive manufacturing services tailored to meet diverse industry needs. Our capabilities include precision manufacturing, product development, quality assurance, and custom production solutions.\n\nQuality Control: Every product undergoes rigorous quality checks at multiple stages to ensure compliance with industry standards and client specifications.\n\nCustom Manufacturing: We work closely with clients to manufacture products that meet their exact requirements, from prototypes to full-scale production runs.\n\nProduct Development: Our experienced team supports clients through the entire product development cycle, from concept to market-ready products.\n\nLogistics Support: We offer integrated logistics solutions to ensure timely delivery of manufactured goods across Nigeria.",
-      "imagePrompt": "Split screen showing various manufacturing processes in Nigerian factory: precision machinery in operation, quality control inspection with calipers and measuring tools, finished products on assembly line, warehouse with organized inventory, professional industrial photography, bright and clean environment",
+      "copy": "What We Offer\n\nFood Delivery\nBrowse our menu and order your favorite meals for delivery anywhere in Uyo. We bring restaurant-quality food straight to your home, office, or event location.\n\nCatering Services\nPlanning a meeting, party, or corporate event? Our catering packages provide delicious, professionally prepared meals for groups of any size.\n\nMeal Subscriptions\nEnjoy daily or weekly meal plans delivered on schedule. Perfect for busy professionals and families who want consistent, healthy eating without the hassle.\n\nCustom Orders\nHave specific dietary requirements or preferences? We accommodate special requests and can customize meals to suit your needs.",
+      "imagePrompt": "Collage-style photorealistic image showing: delivery rider with branded thermal bag on motorcycle in Uyo streets, elegant buffet setup for catering event, meal prep containers arranged neatly for subscription service, Nigerian urban setting, bright natural lighting, professional food service aesthetic",
       "layout": "grid"
     },
     {
       "id": "contact",
       "name": "Contact Us",
-      "copy": "Ready to discuss your manufacturing needs? Get in touch with Eddie Dee Integrated Services today. We're here to provide solutions that meet your requirements with precision and professionalism.\n\nVisit our facility at No 6, Road 8, Federal Housing Estate, Uyo, or reach out to us via phone or WhatsApp. Our team is ready to assist you with all your manufacturing inquiries.",
-      "imagePrompt": "Professional Nigerian business reception area with modern furniture, welcoming atmosphere, industrial design elements, map of Uyo on wall, clean and organized space, natural lighting, corporate photography style, professional receptionist in background",
+      "copy": "Get In Touch\n\nReady to order or have questions? We're here to serve you.\n\nSo Juicy Cloud Kitchen Limited\nNo 6, Road 8, Federal Housing Estate\nUyo, Akwa Ibom State\nNigeria\n\nPhone: 0803 870 6571\nWhatsApp: Chat with us for instant orders\nWebsite: sojuicy.org\n\nOperating Hours:\nMonday - Saturday: 9:00 AM - 9:00 PM\nSunday: 11:00 AM - 8:00 PM\n\nPlace your order today and taste the So Juicy difference!",
+      "imagePrompt": "Warm, inviting image of a smartphone showing a WhatsApp chat interface with food order conversation, Nigerian naira notes and food delivery bags in soft focus background, cozy home setting in Uyo, natural window lighting, professional lifestyle photography",
       "layout": "centered"
     }
   ],
   "contact": {
-    "phone": "+234 803 870 6571",
-    "email": "info@eddiedeeservices.com",
-    "address": "No 6, Road 8, Federal Housing Estate, Uyo, Akwa Ibom State, Nigeria",
+    "phone": "0803 870 6571",
+    "email": "hello@sojuicy.org",
+    "address": "No 6, Road 8, Federal Housing Estate, Uyo, Akwa Ibom State",
     "whatsapp": "https://wa.me/2348038706571"
   }
 }
